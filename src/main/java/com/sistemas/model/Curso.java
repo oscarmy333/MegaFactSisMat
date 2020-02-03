@@ -1,5 +1,7 @@
 package com.sistemas.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +14,10 @@ public class Curso {
 	@Column(name = "abreviatura", nullable = false, length = 10)
 	private String abreviatura;
 	
-	@Column(name = "descripcion", nullable = false, length = 100)
+	@Column(name="costo", nullable = false)
+	private BigDecimal costo;
+	
+	@Column(name = "descripcion", nullable = false, length = 300)
 	private String descripcion;
 	
 	@Column(name = "nombre", nullable = false)
@@ -20,6 +25,12 @@ public class Curso {
 	
 	@Column(name = "credito", nullable = false)
 	private int credito;
+	
+	@Column(name = "estado")
+	private String estado;
+	
+	@Column (name="tiempo_duracion")
+	private String tiempoDuracion;
 
 	public String getAbreviatura() {
 		return abreviatura;
@@ -60,7 +71,30 @@ public class Curso {
 	public void setIdCurso(int idCurso) {
 		this.idCurso = idCurso;
 	}
-	
+
+	public BigDecimal getCosto() {
+		return costo;
+	}
+
+	public void setCosto(BigDecimal costo) {
+		this.costo = costo;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getTiempoDuracion() {
+		return tiempoDuracion;
+	}
+
+	public void setTiempoDuracion(String tiempoDuracion) {
+		this.tiempoDuracion = tiempoDuracion;
+	}
 	
 	
 }

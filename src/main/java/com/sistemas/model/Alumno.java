@@ -1,5 +1,7 @@
 package com.sistemas.model;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,8 +12,12 @@ public class Alumno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAlumno;
 
-    @Column(name = "razonSocial", nullable = false, length = 100)
-    private String razonSocial;
+    @Column(name = "codigo", nullable = false, length = 11)
+    private String codigo;
+    
+    @Column(name = "fecha_nacimiento", nullable=false)
+    private Date fechaNacimiento;
+    
 
     public int getIdAlumno() {
         return idAlumno;
@@ -21,11 +27,5 @@ public class Alumno {
         this.idAlumno = idAlumno;
     }
 
-    public String getRazonSocial() {
-        return razonSocial;
-    }
 
-    public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
-    }
 }
